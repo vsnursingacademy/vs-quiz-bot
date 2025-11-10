@@ -1,0 +1,2 @@
+import Link from 'next/link';
+export default function Home(){const bot=process.env.NEXT_PUBLIC_TELEGRAM_BOT_USERNAME;return (<div className="container"><img src="/vs-logo.png" alt="VS Nursing Academy" className="logo"/><h1>VS Nursing Academy – Quiz Bot</h1><p>Start a quiz in Telegram: <code>/quiz</code>{bot&&<> · <a href={`https://t.me/${bot}`} target="_blank">@{bot}</a></>}</p><div className="links"><Link href="/leaderboard">View Leaderboard</Link> · <Link href="/quiz/vsna-demo">Sample Quiz Page</Link> · <Link href="/admin/login">Admin Login</Link></div></div>)}

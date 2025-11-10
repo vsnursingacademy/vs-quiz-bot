@@ -1,0 +1,4 @@
+import { useState } from 'react';
+import { supabaseClient } from '@/lib/supabaseClient';
+import { useRouter } from 'next/router';
+export default function Login(){const [email,setEmail]=useState('');const [password,setPassword]=useState('');const [msg,setMsg]=useState('');const router=useRouter();const signIn=async(e)=>{e.preventDefault();const {error}=await supabaseClient.auth.signInWithPassword({email,password});if(error)setMsg(error.message);else router.push('/admin/quizzes');};return (<div className="authBox"><img src="/vs-logo.png" alt="VS Nursing Academy" className="logoSmall"/><h2>Admin Login</h2><form onSubmit={signIn}><label>Email</label><input value={email} onChange={e=>setEmail(e.target.value)} required/><label>Password</label><input type="password" value={password} onChange={e=>setPassword(e.target.value)} required/><button type="submit">Sign in</button></form><p className="error">{msg}</p></div>)}

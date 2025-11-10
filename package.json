@@ -1,0 +1,18 @@
+{
+  "name": "vs-quiz-bot",
+  "version": "1.3.0",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "start": "next start",
+    "dev": "next dev"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.46.0",
+    "next": "^14.2.5",
+    "papaparse": "^5.4.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "node-fetch": "^3.3.2"
+  }
+}

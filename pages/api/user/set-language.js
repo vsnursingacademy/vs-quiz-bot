@@ -1,0 +1,2 @@
+import { supabaseAdmin } from '@/lib/supabaseAdmin';
+export default async function handler(req,res){if(req.method!=='POST') return res.status(405).json({error:'POST only'});const { telegram_user_id, lang } = req.body||{};if(!telegram_user_id||!lang) return res.status(400).json({error:'Missing'});await supabaseAdmin.from('users').update({ preferred_lang: lang }).eq('id', telegram_user_id);res.status(200).json({ok:true});}
